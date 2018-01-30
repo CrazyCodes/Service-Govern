@@ -3,7 +3,9 @@
   "description": "这是一个为了实现服务治理的Server快速启动脚本",
   "keywords": [
     "laravel",
-    "tcp"
+    "tcp",
+    "服务治理",
+    "soa"
   ],
   "license": "MIT",
   "authors": [

@@ -12,6 +12,11 @@
 	
 	class ServerServiceProvider extends ServiceProvider
 	{
+		public function boot()
+		{
+			$this->registerCommands ();
+		}
+		
 		public function registerCommands()
 		{
 			$this->commands ([
