@@ -20,7 +20,7 @@
 		public function registerCommands()
 		{
 			$this->commands ([
-				Console\StartTcpServer::class
+				Console\StartTcpServerCommand::class
 			]);
 		}
 	}

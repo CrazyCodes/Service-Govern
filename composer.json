@@ -1,6 +1,6 @@
 {
   "name": "myservices/tcp_server_for_laravel",
-  "description": "这是一个为了实现服务治理的Server快速启动脚本",
+  "description": "这是一个基于Laravel,为了实现服务治理的Server快速启动脚本",
   "keywords": [
     "laravel",
     "tcp",
@@ -16,7 +16,9 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.6.0"
+    "php": ">=5.6.0",
+    "illuminate/support": "^5.7@dev",
+    "illuminate/console": "^5.7@dev"
   },
   "autoload": {
     "psr-4": {
