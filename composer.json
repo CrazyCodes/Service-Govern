@@ -12,7 +12,7 @@
       "email": "c919342864@yahoo.com"
     }
   ],
-  "minimum-stability": "dev",
+  "minimum-stability": "state",
   "require": {
     "php": ">=5.6.0"
   },
