@@ -23,6 +23,9 @@
   "autoload": {
     "psr-4": {
       "Tcp\\": "src/"
-    }
+    },
+    "files" : [
+      "src/Helpers/Function.php"
+    ]
   }
 }
