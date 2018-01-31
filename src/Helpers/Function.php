@@ -20,3 +20,10 @@
 		
 		return $result;
 	}
+	
+	function S($service = '', $action = '', $data = [])
+	{
+		$app = app ()->make ('App\Service\\' . $service);
+		
+		return $app->{$action} ($data);
+	}
