@@ -1,6 +1,9 @@
 # 前言
 * 为了服务治理未来的扩容，将批量部署N个服务提供者，所以准备了基于Laravel Command的一个很小的启动包
 * 我的服务治理使用的Tcp服务器是鸟哥大神写的Swoole
+-----
+服务治理的Server端无需Nginx、Apache类似的服务代理
+Swoole的receive方法将直接访问/app/Service，所有业务都需要在App/Service的命名空间下
 # 安装
 使用composer安装
 ```
