@@ -34,3 +34,4 @@ TCP_SERVER_PORT=9503      // tcp 端口
 php artisan start
 ```
 即可启动Tcp Server,但如果想后台监控进程，我选用的是Supervisor
+1
