@@ -1,6 +1,6 @@
 <?php
 	
-	namespace App\Libarary;
+	namespace Tcp\Libarary;
 	
 	class ServerResponse
 	{
