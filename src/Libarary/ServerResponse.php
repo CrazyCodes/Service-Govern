@@ -23,7 +23,7 @@
 			]);
 		}
 		
-		public function createSuccessCodeMeg($msg, $code)
+		public function createSuccessCodeMsg($msg, $code)
 		{
 			return json_encode ([
 				self::CODE_PREFIX    => $code,
@@ -31,7 +31,7 @@
 			]);
 		}
 		
-		public function createSuccessMegData($msg, $data)
+		public function createSuccessMsgData($msg, $data)
 		{
 			return json_encode ([
 				self::CODE_PREFIX    => 200,
@@ -56,7 +56,7 @@
 			]);
 		}
 		
-		public function createErrorCodeMeg($msg, $code)
+		public function createErrorCodeMsg($msg, $code)
 		{
 			return json_encode ([
 				self::CODE_PREFIX    => $code,
@@ -64,7 +64,7 @@
 			]);
 		}
 		
-		public function createErrorMegData($msg, $data)
+		public function createErrorMsgData($msg, $data)
 		{
 			return json_encode ([
 				self::CODE_PREFIX    => 0,

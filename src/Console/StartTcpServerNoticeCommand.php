@@ -8,24 +8,24 @@
 	
 	namespace Tcp\Console;
 	
+	use App\Libarary\NoticeResponse;
 	use Illuminate\Console\Command;
-	use Tcp\Libarary\StartTcp;
 	
-	class StartTcpServerCommand extends Command
+	class StartTcpServerNoticeCommand extends Command
 	{
 		/**
 		 * The console command name.
 		 *
 		 * @var string
 		 */
-		protected $name = 'start';
+		protected $name = 'notice';
 		
 		/**
 		 * The console command description.
 		 *
 		 * @var string
 		 */
-		protected $description = '启动RPC-Provider';
+		protected $description = '启动RPC-Consumer';
 		
 		/**
 		 * Create a new command instance.
@@ -42,8 +42,8 @@
 		 *
 		 * @return mixed
 		 */
-		public function handle(StartTcp $startTcp)
+		public function handle(NoticeResponse $noticeResponse)
 		{
-			$startTcp->init ();
+			$noticeResponse->init ();
 		}
 	}

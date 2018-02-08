@@ -1,29 +1,25 @@
 <?php
-	function T($service = '', $action = '', $data = [])
-	{
-		$client = new \swoole_client(SWOOLE_SOCK_TCP);
+	
+	
+	if (function_exists ('T')) {
 		
-		if (!$client->connect (env ("CLIENT_SERVER_URL"), env ("CLIENT_SERVER_PORT"), -1)) {
-			exit("connect failed. Error: {$this->client->errCode}\n");
+		function T($service = '', $action = '', $data = [])
+		{
+			$swooleFunc = new \Tcp\Libarary\SwooleFunc();
+			
+			return $swooleFunc->request ($service = '', $action = '', $data = []);
 		}
-		$data = json_encode ([
-			'service' => $service,
-			'action'  => $action,
-			'data'    => $data,
-		]);
 		
-		$client->send ($data);
-		
-		$result = $client->recv ();
-		
-		$client->close ();
-		
-		return $result;
 	}
 	
-	function S($service = '', $action = '', $data = [])
-	{
-		$app = app ()->make ('App\Service\\' . $service);
+	if (function_exists ('S')) {
 		
-		return $app->{$action} ($data);
+		function S($service = '', $action = '', $data = [])
+		{
+			$swooleFunc = new \Tcp\Libarary\SwooleFunc();
+			
+			return $swooleFunc->test ($service = '', $action = '', $data = []);
+		}
+		
 	}
+	

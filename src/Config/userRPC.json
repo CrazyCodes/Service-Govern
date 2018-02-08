@@ -1,0 +1,33 @@
+{
+  "center": [
+    {
+      "ip": "127.0.0.1",
+      "port": 5333
+    },
+    {
+      "ip": "127.0.0.1",
+      "port": 5331
+    }
+  ],
+  "provider": {
+    "UserService": [
+      {
+        "method": "getUserInfo",
+        "params": [
+          "uid"
+        ]
+      },
+      {
+        "method": "isStudent",
+        "params": [
+          "uid"
+        ]
+      }
+    ]
+  },
+  "consumer": [
+    "xxxService",
+    "xxxService",
+    "xxxService"
+  ]
+}
