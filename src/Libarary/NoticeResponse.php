@@ -36,11 +36,11 @@
 			$this->server->on ('receive', function ($server, $fd, $reactor_id, $data) {
 				$fileName = json_decode ($data, true);
 				
-				if (!file_exists ('provider')) {
-					mkdir ('provider');
+				if (!file_exists (base_path () . '/provider')) {
+					mkdir (base_path () . '/provider');
 				}
 				
-				$status = file_put_contents ('provider/' . $fileName['name'] . '.json', $data);
+				$status = file_put_contents (base_path () . '/provider/' . $fileName['name'] . '.json', $data);
 				
 				if ($status) {
 					$server->send ($fd, '接收成功 001');
