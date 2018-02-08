@@ -44,6 +44,14 @@
 			return $result;
 		}
 		
+		public function requests
+		(
+			$group = '', $service = '', $action = '', $data = []
+		)
+		{
+			var_dump ($group, $service, $action, $data);
+		}
+		
 		public function test($service = '', $action = '', $data = [])
 		{
 			if ($service == '' || $action == '') {
