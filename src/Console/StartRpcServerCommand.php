@@ -9,7 +9,7 @@
 	namespace Rpc\Console;
 	
 	use Illuminate\Console\Command;
-	use Tcp\Libarary\StartRpc;
+	use Rpc\Libarary\StartRpc;
 	
 	class StartRpcServerCommand extends Command
 	{

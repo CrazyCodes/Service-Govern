@@ -8,7 +8,7 @@
 	
 	namespace Rpc\Console;
 	
-	use App\Libarary\NoticeResponse;
+	use Rpc\Libarary\NoticeResponse;
 	use Illuminate\Console\Command;
 	
 	class StartRpcClientCommand extends Command
