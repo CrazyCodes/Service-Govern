@@ -1,7 +1,12 @@
 <?php
 	
-	namespace Tcp\Libarary;
+	namespace Rpc\Libarary;
 	
+	/**
+	 * Class ServerResponse
+	 * @content 提供者响应
+	 * @package Tcp\Libarary
+	 */
 	class ServerResponse
 	{
 		const CODE_PREFIX = 'code';

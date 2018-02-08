@@ -1,6 +1,6 @@
 <?php
 	
-	namespace App\Libarary;
+	namespace Rpc\Libarary;
 	
 	use ErrorException;
 	

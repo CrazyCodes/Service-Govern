@@ -1,7 +1,12 @@
 <?php
 	
-	namespace App\Libarary;
+	namespace Rpc\Libarary;
 	
+	/**
+	 * Class NoticeResponse
+	 * @content 客户端接收注册中心推送(生成.json文件)
+	 * @package App\Libarary
+	 */
 	class NoticeResponse
 	{
 		private $server;
@@ -9,6 +14,7 @@
 		public function __construct()
 		{
 			$this->server = new \swoole_server(env ("TCP_NOTICE_URL"), env ("TCP_NOTICE_PORT"));
+//			$this->server = new \swoole_server('127.0.0.1', '1111');
 		}
 		
 		public function init()
@@ -29,7 +35,12 @@
 		{
 			$this->server->on ('receive', function ($server, $fd, $reactor_id, $data) {
 				$fileName = json_decode ($data, true);
-				$status   = file_put_contents (base_path () . '/provider/' . $fileName['name'] . '.json', $data);
+				
+				if (!file_exists ('provider')) {
+					mkdir ('provider');
+				}
+				
+				$status = file_put_contents ('provider/' . $fileName['name'] . '.json', $data);
 				
 				if ($status) {
 					$server->send ($fd, '接收成功 001');

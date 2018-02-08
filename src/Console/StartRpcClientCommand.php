@@ -6,26 +6,26 @@
 	 * Time: 16:04
 	 */
 	
-	namespace Tcp\Console;
+	namespace Rpc\Console;
 	
+	use App\Libarary\NoticeResponse;
 	use Illuminate\Console\Command;
-	use Tcp\Libarary\StartTcp;
 	
-	class StartTcpServerCommand extends Command
+	class StartRpcClientCommand extends Command
 	{
 		/**
 		 * The console command name.
 		 *
 		 * @var string
 		 */
-		protected $name = 'start';
+		protected $name = 'start-Rpc-client';
 		
 		/**
 		 * The console command description.
 		 *
 		 * @var string
 		 */
-		protected $description = '启动RPC-Provider';
+		protected $description = '启动RPC-Consumer';
 		
 		/**
 		 * Create a new command instance.
@@ -42,8 +42,8 @@
 		 *
 		 * @return mixed
 		 */
-		public function handle(StartTcp $startTcp)
+		public function handle(NoticeResponse $noticeResponse)
 		{
-			$startTcp->init ();
+			$noticeResponse->init ();
 		}
 	}

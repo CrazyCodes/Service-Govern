@@ -1,14 +1,20 @@
 <?php
 	
-	namespace Tcp\Libarary;
+	namespace Rpc\Libarary;
 	
-	class StartTcp
+	/**
+	 * Class StartTcp
+	 * @content 启动提供者监控
+	 * @package Tcp\Libarary
+	 */
+	class StartRpc
 	{
 		private $server;
 		
 		public function __construct()
 		{
 			$this->server = new \swoole_server(env ("TCP_SERVER_URL"), env ("TCP_SERVER_PORT"));
+//			$this->server = new \swoole_server('127.0.0.1', '9555');
 		}
 		
 		public function init()

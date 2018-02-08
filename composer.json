@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Tcp\\": "src/"
+      "Rpc\\": "src/"
     },
     "files": [
       "src/Helpers/Function.php"

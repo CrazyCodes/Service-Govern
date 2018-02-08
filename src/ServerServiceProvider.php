@@ -6,7 +6,7 @@
 	 * Time: 18:19
 	 */
 	
-	namespace Tcp;
+	namespace Rpc;
 	
 	use Illuminate\Support\ServiceProvider;
 	
@@ -20,7 +20,8 @@
 		public function registerCommands()
 		{
 			$this->commands ([
-				Console\StartTcpServerCommand::class
+				Console\StartRpcServerCommand::class,
+				Console\StartRpcClientCommand::class,
 			]);
 		}
 	}
