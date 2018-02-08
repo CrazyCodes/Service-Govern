@@ -6,9 +6,7 @@
 * Swoole - 异步网络通信引擎 (即RPC) [https://www.swoole.com/]
 * Laravel/Lumen -  PHP开发框架 [https://laravel.com/]
 * PHP7+
----
-服务治理的Server端无需Nginx、Apache类似的服务代理
-Swoole的receive方法将直接访问/app/Service，所有业务都需要在App/Service的命名空间下
+
 # 安装
 使用composer安装
 ```
@@ -19,12 +17,12 @@ composer require myservices/tcp_server_for_laravel
 ## Lumen
 bootstrap/app.php 文件
 ```php
-$app->register (Tcp\ServerServiceProvider::class);
+$app->register (Rpc\RpcServiceProvider::class);
 ```
 ## Laravel
 config/app.php providers 的数组中新增
 ```php
-Tcp\RpcServiceProvider::class
+Rpc\RpcServiceProvider::class
 ```
 # 配置项
 在.env文件中
@@ -39,5 +37,8 @@ CLIENT_SERVER_PORT=9503     // 消费者端口
 # 启动与监控
 配置完成后，使用命令
 ```
-php artisan start
+// 需先配置TCP_SERVER_URL和TCP_SERVER_PORT变量
+php artisan start-Rpc-client 启动消费者（客户端），即接收注册中心的发送和监控
+// 需先配置CLIENT_SERVER_URL和CLIENT_SERVER_PORT变量
+php artisan start-Rpc-server 启动提供者 (服务端)
 ```
