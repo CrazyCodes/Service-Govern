@@ -9,21 +9,13 @@
 	 */
 	class NoticeRequest
 	{
-		public function request($data = [])
+		public function request($data = [],$NOTICE_URL,$NOTICE_PORT)
 		{
-			
 			try {
 				
 				$client = new \swoole_client(SWOOLE_SOCK_TCP);
-
-
-				$CLIENT_SERVER_URL  = env ("CLIENT_SERVER_URL");
-//				$CLIENT_SERVER_URL = '127.0.0.1';
-				$CLIENT_SERVER_PORT = env ("CLIENT_SERVER_PORT");
-//				$CLIENT_SERVER_PORT = '1111';
 				
-				
-				if (!$client->connect ($CLIENT_SERVER_URL, $CLIENT_SERVER_PORT, -1)) {
+				if (!$client->connect ($NOTICE_URL, $NOTICE_PORT, -1)) {
 					throw new \Exception("connect failed. Error: {$this->client->errCode}");
 				}
 				

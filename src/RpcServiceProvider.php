@@ -10,7 +10,7 @@
 	
 	use Illuminate\Support\ServiceProvider;
 	
-	class ServerServiceProvider extends ServiceProvider
+	class RpcServiceProvider extends ServiceProvider
 	{
 		public function boot()
 		{

@@ -1,6 +1,6 @@
 <?php
 	
-	use App\Libarary\ClientResponse;
+	use Rpc\Libarary\ClientResponse;
 	
 	include_once "../src/Libarary/ClientResponse.php";
 	

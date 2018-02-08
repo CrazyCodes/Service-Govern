@@ -13,7 +13,7 @@
 		
 		public function __construct()
 		{
-			$this->server = new \swoole_server(env ("TCP_NOTICE_URL"), env ("TCP_NOTICE_PORT"));
+			$this->server = new \swoole_server(env ("CLIENT_SERVER_URL"), env ("CLIENT_SERVER_PORT"));
 //			$this->server = new \swoole_server('127.0.0.1', '1111');
 		}
 		
