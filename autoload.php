@@ -1,4 +1,7 @@
 <?php
+	
+	define('BASE_PATH',str_replace('\\','/',realpath(dirname(__FILE__).'/'))."/");
+	
 	/**
 	 * Created by PhpStorm.
 	 * User: crazy
@@ -9,6 +12,12 @@
 	spl_autoload_register (function ($class) {
 		if (stripos ($class, 'Rpc\\') === 0) {
 			list($search, $replace) = [['\\', 'Rpc/'], ['/', 'src/']];
+			$filename = __DIR__ . DIRECTORY_SEPARATOR . str_replace ($search, $replace, $class) . '.php';
+			file_exists ($filename) && include $filename;
+		}
+		
+		if (stripos ($class, 'Test\\') === 0) {
+			list($search, $replace) = [['\\', 'Test/'], ['/', 'tests/']];
 			$filename = __DIR__ . DIRECTORY_SEPARATOR . str_replace ($search, $replace, $class) . '.php';
 			file_exists ($filename) && include $filename;
 		}

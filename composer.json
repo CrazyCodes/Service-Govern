@@ -20,10 +20,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Rpc\\": "src/"
+      "Rpc\\": "src/",
+      "Test\\": "tests/"
     },
     "files": [
-      "src/Helpers/Function.php"
     ]
+  },
+  "require-dev": {
+    "eaglewu/swoole-ide-helper": "dev-master"
   }
 }
