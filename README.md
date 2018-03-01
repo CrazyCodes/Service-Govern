@@ -10,6 +10,7 @@
 # 安装
 
 ### composer
+请拉取最新版本，老版本不可用
 ```
 composer require myservices/rpc
 ```
