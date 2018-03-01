@@ -64,7 +64,7 @@ var_dump ($dev->getUserInfo (['name' => 111]));
 
 SwooleTcpServer 只能在CLI中执行，所以我选择使用Supervisor做进程管理
 
-# 致谢
+# 鸣谢
 周梦康 [https://mengkang.net/]
 
 Swoole [https://www.swoole.com/]
