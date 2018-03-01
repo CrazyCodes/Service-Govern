@@ -36,28 +36,28 @@ git clone https://github.com/CrazyCodes/Rpc-Plugin.git
 * monitoring_center_ip 监控/日志中心IP (监控/日志中心正在Coding)
 * monitoring_center_port 监控/日志中心端口
 
-# 部署
+# 部署&开发
 
+### 初始化
 ```
-$client = new \Rpc\RpcProvider(当前项目的根目录);
+$client = new \Rpc\RpcProvider(当前项目的根目录地址);
+```
 
-/**
- * @ 启动监听
- */
+### 启动提供者/消费者
+```
 $client->server ();
+```
 
-/**
- * @ 请求提供者 （生产模式）
- */
+### 请求提供者 （生产模式）
+```
 $production = $client->client ('UserService');
 var_dump ($production->getUserInfo (['name' => 111]));
+```
 
-/**
- * @ 请求提供者 （开发模式）
- */
+### 请求提供者 （开发模式）
+```
 $dev = $client->devClient ('UserService');
 var_dump ($dev->getUserInfo (['name' => 111]));
-
 ```
 
 # 监听
