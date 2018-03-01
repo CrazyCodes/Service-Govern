@@ -1,13 +1,10 @@
 <?php
 	include_once '../../autoload.php';
 	
-	$client = new \Rpc\Libs\RpcMain([
-		'ip'   => '127.0.0.1',
-		'port' => '9999',
-	]);
+	$appConfig = include_once BASE_PATH . '/config/app.php';
 	
 	
-	$result = $client->send ('UserService', 'getUserInfo', [
+	\Rpc\Libs\Dispatcher::configUpdate ([
 		'center'   => [
 			[
 				'ip'   => '127.0.0.1',
@@ -36,7 +33,4 @@
 		],
 	
 	
-	]);
-	
-	var_dump ($result);
-	
+	], $appConfig);

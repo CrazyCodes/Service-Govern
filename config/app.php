@@ -1,5 +1,15 @@
 <?php
 	return [
+		/**
+		 * @ 项目名称
+		 */
+		'app_name'               => 'msm-center',
+		
+		
+		/**
+		 * @ 项目目录
+		 */
+		'base_path'              => BASE_PATH,
 		
 		
 		/*
@@ -17,59 +27,49 @@
 		
 		
 		/**
-		 * @ 消费者ip
-		 * 消费者用于接收通知，所以必须也开启
-		 * 基本上用于接收配置文件更改
+		 * @ 监听Ip
 		 */
-		'ConsumerIp'             => '127.0.0.1',
+		'server_ip'              => '127.0.0.1',
 		
 		
 		/**
-		 * @ 消费者端口
-		 * 消费者用于接收通知，所以必须也开启
-		 * 基本上用于接收配置文件更改
+		 * @ 监听端口
 		 */
-		'ConsumerPort'           => '9992',
+		'server_port'            => '9992',
 		
 		
 		/**
-		 * @ 服务提供者ip
+		 * @ 回调端口 (用于同步配置文件)
 		 */
-		'ProviderIp'             => '127.0.0.1',
-		
-		
-		/**
-		 * @ 服务提供者端口
-		 */
-		'ProviderPort'           => '9992',
+		'server_notify_port'     => '9999',
 		
 		
 		/**
 		 * @ 治理中心Ip
 		 * 由管理员告知ip
 		 */
-		'Management_Center_Ip'   => '127.0.0.1',
+		'management_center_ip'   => '127.0.0.1',
 		
 		
 		/**
 		 * @ 治理中心端口
 		 * 由管理员告知端口
 		 */
-		'Management_Center_Port' => '1000',
+		'management_center_port' => '1000',
 		
 		
 		/**
 		 * @ 监控中心Ip
 		 * 由管理员告知ip
 		 */
-		'Monitoring_Center_Ip'   => '127.0.0.1',
+		'monitoring_center_ip'   => '127.0.0.1',
 		
 		
 		/**
 		 * @ 监控中心端口
 		 * 由管理员告知端口
 		 */
-		'Monitoring_Center_Port' => '1001',
+		'monitoring_center_port' => '1001',
 	
 	];
 	

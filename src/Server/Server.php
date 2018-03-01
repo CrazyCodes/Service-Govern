@@ -7,11 +7,11 @@
 	 * @content 消费者Server
 	 * @package Rpc\Server
 	 */
-	class Consumer
+	class Server
 	{
 		public function __construct($config)
 		{
-			$server = new ConsumerRpc($config);
+			$server = new ServerRpc($config);
 			
 			$server->start ();
 		}

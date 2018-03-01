@@ -15,8 +15,8 @@
 		public static function online($config)
 		{
 			$client = new RpcMain([
-				'ip'   => $config['Management_Center_Ip'],
-				'port' => $config['Management_Center_Port'],
+				'ip'   => $config['management_center_ip'],
+				'port' => $config['management_center_port'],
 			]);
 			
 			$client->send ('OnlineService', 'receive', [
@@ -30,8 +30,8 @@
 		public static function offline($config)
 		{
 			$client = new RpcMain([
-				'ip'   => $config['Management_Center_Ip'],
-				'port' => $config['Management_Center_Port'],
+				'ip'   => $config['management_center_ip'],
+				'port' => $config['management_center_port'],
 			]);
 			
 			$client->send ('OfflineService', 'receive', [
@@ -45,8 +45,8 @@
 		public static function log($config, $data)
 		{
 			$client = new RpcMain([
-				'ip'   => $config['Monitoring_Center_Ip'],
-				'port' => $config['Monitoring_Center_Port'],
+				'ip'   => $config['monitoring_center_ip'],
+				'port' => $config['monitoring_center_port'],
 			]);
 			
 			$data['app_name'] = $config['app_name'];

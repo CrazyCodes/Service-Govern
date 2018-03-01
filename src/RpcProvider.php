@@ -5,6 +5,7 @@
 	use Rpc\Develop\Client;
 	use Rpc\Server\Consumer;
 	use Rpc\Server\Provider;
+	use Rpc\Server\Server;
 	
 	class RpcProvider
 	{
@@ -24,17 +25,9 @@
 		/**
 		 * @ 消费者服务器
 		 */
-		public function serverConsumer()
+		public function server()
 		{
-			new Consumer($this->config);
-		}
-		
-		/**
-		 * @ 提供者服务器
-		 */
-		public function serverProvider()
-		{
-			new Provider($this->config);
+			new Server($this->config);
 		}
 		
 		/**
@@ -59,6 +52,16 @@
 		public function devClient($service)
 		{
 			return new Client($service, $this->config);
+		}
+		
+		
+		/**
+		 * @ 对外开发接口
+		 * @return Open
+		 */
+		public function open()
+		{
+			return new Open($this->configPath);
 		}
 		
 	}

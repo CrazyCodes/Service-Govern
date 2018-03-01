@@ -2,10 +2,11 @@
 	
 	namespace Rpc\Server;
 	
+	use Rpc\Libs\Dispatcher;
 	use Rpc\Libs\Logs;
 	use Rpc\Libs\Notice;
 	
-	class ConsumerRpc
+	class ServerRpc
 	{
 		protected $server;
 		
@@ -17,7 +18,8 @@
 		{
 			$this->config = $config;
 			
-			$this->server = new \swoole_server($config['ConsumerIp'], $config['ConsumerPort']);
+			$this->server = new \swoole_server($config['server_ip'], $config['server_port']);
+			$this->server->addListener ($config['server_ip'], $config['server_notify_port'], SWOOLE_SOCK_TCP);
 		}
 		
 		public function start()
@@ -32,12 +34,22 @@
 		public function receive()
 		{
 			$this->server->on ('receive', function ($server, $fd, $reactor_id, $data) {
-				$request   = Logs::receive ($data);
-				$className = $this->config['production_path'] . $request['service'];
-				$app       = new $className;
-				$response  = $app->{$request['action']}($request['parameters']);
-				$server->send ($fd, $response);
-				$server->close ($fd);
+				
+				$connection_info = $server->connection_info ($fd, $reactor_id);
+				$request         = Logs::receive ($data);
+				
+				if ($connection_info['server_port'] == $this->config['server_port']) {
+					$className = $this->config['production_path'] . $request['service'];
+					$app       = new $className;
+					$response  = $app->{$request['action']}($request['parameters']);
+					$server->send ($fd, $response);
+					$server->close ($fd);
+				} else {
+					Dispatcher::configUpdate ($request['parameters'], $this->config);
+					$server->send ($fd, json_encode (['message' => '通知成功', 'code' => 200]));
+					$server->close ($fd);
+				}
+				
 			});
 			
 			return $this;
