@@ -1,6 +1,6 @@
 {
-  "name": "myservices/tcp_server_for_laravel",
-  "description": "这是一个基于Laravel,为了实现服务治理的Server快速启动脚本",
+  "name": "myservices/rpc",
+  "description": "服务治理消费者&提供者插件",
   "keywords": [
     "laravel",
     "tcp",
@@ -25,8 +25,5 @@
     },
     "files": [
     ]
-  },
-  "require-dev": {
-    "eaglewu/swoole-ide-helper": "dev-master"
   }
 }
