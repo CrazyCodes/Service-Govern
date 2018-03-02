@@ -3,6 +3,7 @@
 	namespace Rpc;
 	
 	use Rpc\Develop\Client;
+	use Rpc\Monitor\Monitor;
 	use Rpc\Server\Consumer;
 	use Rpc\Server\Provider;
 	use Rpc\Server\Server;
@@ -54,6 +55,14 @@
 			return new Client($service, $this->config);
 		}
 		
+		
+		/**
+		 * @ 日志(监控)系统
+		 */
+		public function monitorStart()
+		{
+			new Monitor($this->config);
+		}
 		
 		/**
 		 * @ 对外开发接口

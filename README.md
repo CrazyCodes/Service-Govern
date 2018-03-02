@@ -59,6 +59,11 @@ var_dump ($production->getUserInfo (['name' => 111]));
 $dev = $client->devClient ('UserService');
 var_dump ($dev->getUserInfo (['name' => 111]));
 ```
+### 启动日志(监控)系统
+```
+$monitor = new \Rpc\RpcProvider(BASE_PATH);
+$monitor->monitorStart ();
+```
 
 # 监听
 

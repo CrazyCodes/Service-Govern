@@ -69,7 +69,7 @@
 		 * @ 监控中心端口
 		 * 由管理员告知端口
 		 */
-		'monitoring_center_port' => '1001',
+		'monitoring_center_port' => '5555',
 	
 	];
 	
