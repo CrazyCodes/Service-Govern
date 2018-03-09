@@ -1,2 +1,5 @@
 /.idea
 /logger
+/composer.lock
+/tests/Learn/*
+/vendor/

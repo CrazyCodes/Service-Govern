@@ -1,13 +1,25 @@
 <?php
-	
+	// +----------------------------------------------------------------------
+	// | Rpc-Plugin [ SOA & Services ]
+	// +----------------------------------------------------------------------
+	// | Copyright (c) 2017-2018 http://blog.fastrun.cn/ All rights reserved.
+	// +----------------------------------------------------------------------
+	// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+	// +----------------------------------------------------------------------
+	// | Author: Crazy <919342864@qq.com>
+	// +----------------------------------------------------------------------
 	namespace Rpc;
 	
 	use Rpc\Develop\Client;
 	use Rpc\Monitor\Monitor;
-	use Rpc\Server\Consumer;
-	use Rpc\Server\Provider;
 	use Rpc\Server\Server;
 	
+	/**
+	 * 服务治理架构的主提供者
+	 *
+	 * Class RpcProvider
+	 * @package Rpc
+	 */
 	class RpcProvider
 	{
 		protected $config, $configPath, $consumerConfig, $centerConfig, $providerConfig;

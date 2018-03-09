@@ -18,7 +18,7 @@
 		{
 			$this->config = $config;
 			
-			$this->server = new \swoole_server($config['server_ip'], $config['server_port']);
+				$this->server = new \swoole_server($config['server_ip'], $config['server_port']);
 			$this->server->addListener ($config['server_ip'], $config['server_notify_port'], SWOOLE_SOCK_TCP);
 		}
 		
